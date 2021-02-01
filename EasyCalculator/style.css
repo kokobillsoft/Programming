@@ -13,3 +13,31 @@ body {
     max-width: 360px;
     font-family: "Tahoma";
 }
+
+.item1{
+    background-color: aquamarine;
+    color: #000;
+    max-width: 85px;
+    padding: 20px;
+    display: flex;
+}
+
+.item1_input{
+    background-color: brown;
+    display: flex;
+    padding: 20px;
+}
+
+.item1_clear{
+    background-color: burlywood;
+    max-width: 175px;
+    display: flex;
+    padding: 20px;
+}
+
+.item1_back{
+    background-color: coral;
+    max-width: 175px;
+    display: flex;
+    padding: 20px;
+}
