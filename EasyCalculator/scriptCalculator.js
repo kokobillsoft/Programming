@@ -19,3 +19,11 @@ function back1(){
    // alert (line);
     document.getElementById('textview').value = line.substring(0,line.length-1);
 }
+
+function item1_equal(){
+    var line = document.getElementById('textview').value;
+    if(line){
+        document.getElementById('textview').value = eval(line);
+    }
+
+}
