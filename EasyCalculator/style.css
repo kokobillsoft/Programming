@@ -41,3 +41,11 @@ body {
     display: flex;
     padding: 20px;
 }
+
+.item1_equal{
+    background-color: rgb(247, 157, 125);
+}
+
+.item1_zero{
+    background-color:rgb(247, 190, 169);
+}
