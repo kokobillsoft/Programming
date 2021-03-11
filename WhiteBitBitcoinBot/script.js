@@ -5,29 +5,37 @@ const https = require('https');
 const TOKEN = fs.readFileSync("token.txt", "utf8");
 const bot = new TelegramBot(TOKEN, {polling: true});
 const MoneyMarket = "BTC_UAH";
-const actualPrice = 0;
+let actualPrice = "1";
+let previousPrice = "1";
 
 const request = require('request');
 
-let xSecond = 5000;// 5 second
+let xSecond = 10000;// 5 second
 setInterval(function(){
-    askCurentPrice();
-},xSecond)
-
-function askCurentPrice (){
     request('https://whitebit.com/api/v1/public/ticker?market='+ MoneyMarket, { json: true }, (err, res, body) => {
-        if (err) { return console.log(err); }
-        console.log(body.result.bid);
-});
-};
+    if (err) { return console.log(err); }
+       previousPrice = actualPrice; 
+       actualPrice = body.result.bid;
+       let changeCourse = actualPrice/previousPrice;
+       console.log (changeCourse);
+       if (changeCourse>1.001)
+       {
+            console.log ("Upper");
+       } else if (changeCourse<0.998)
+       {
+            console.log ("Lowwer");
+       }
 
-//console.log(ask.x)
+        
+});
+},xSecond);
+
 bot.on('message', (msg)=>{
 
-    console.log("1");
+    console.log("Bot Starting");
 
-    if (msg.text == "Курс"){
-        bot.sendMessage (msg.chat.id, body.result.bid);
+    if ((msg.text == "Курс") || (msg.text == "курс")){
+        bot.sendMessage (msg.chat.id, actualPrice);
     }
     console.log(msg);
     if (msg.text == "Hi"){
