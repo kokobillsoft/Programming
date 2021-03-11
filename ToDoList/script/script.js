@@ -8,7 +8,16 @@ if(localStorage.getItem('todo')){
     displayMessages();
 }
 
-addButton.addEventListener('click', function (){
+addButton.addEventListener('click', addMessageToDo);
+addMessage.addEventListener('keydown', function (e){
+    if(e.keyCode === 13)
+    {
+        addMessageToDo ();
+    }
+});
+
+function addMessageToDo ()
+{
 
 let newTodo = {
     todo: addMessage.value,
@@ -20,7 +29,7 @@ let newTodo = {
     displayMessages();
     localStorage.setItem('todo', JSON.stringify(todoList));
     addMessage.value='';
-});
+};
 
 function displayMessages(){
     
