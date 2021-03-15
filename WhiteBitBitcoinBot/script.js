@@ -79,11 +79,12 @@ setInterval(function(){
        {
             bot.sendMessage (CHAT_ID, "Курс падает = " + actualPrice);
             console.log ("Upper");
-       
+       };
+       if (changeCourse<=0.999)
             {
             bot.sendMessage (CHAT_ID, "Курс растет = " + actualPrice);
             console.log ("Lowwer");
-       }
+       };
 
         
 });
