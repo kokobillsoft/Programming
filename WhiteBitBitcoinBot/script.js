@@ -75,12 +75,12 @@ setInterval(function(){
            bot.sendMessage (CHAT_ID, "Минимум за сегодня = " + lowestPrice);
        }
       // console.log (changeCourse);
-       if (changeCourse>=1.01)
+       if (changeCourse>=1.001)
        {
             bot.sendMessage (CHAT_ID, "Курс падает = " + actualPrice);
             console.log ("Upper");
-       } else if (changeCourse<=0.99)
-       {
+       
+            {
             bot.sendMessage (CHAT_ID, "Курс растет = " + actualPrice);
             console.log ("Lowwer");
        }
