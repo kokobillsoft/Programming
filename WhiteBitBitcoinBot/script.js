@@ -4,7 +4,7 @@ const http = require('http');
 const https = require('https');
 const TOKEN = fs.readFileSync("token.txt", "utf8");
 const bot = new TelegramBot(TOKEN, {polling: true});
-const MoneyMarket = "BTC_UAH";
+let MoneyMarket = "BTC_UAH";
 let actualPrice = "1";
 let previousPrice = "1";
 let lowestPrice = 10000000000;
@@ -29,6 +29,16 @@ bot.on("message", (msg)=>{
         lowestPrice = actualPrice;
         bot.sendMessage (CHAT_ID, "Ноль котировки = " + actualPrice);
     }
+    
+    if (curentMessage == "ETC")
+    {
+        MoneyMarket = "ETC_UAH"
+    }
+
+    if (curentMessage == "BTC")
+    {
+        MoneyMarket = "BTC_UAH"
+    }
 
     if (curentMessage== "Стоп")
     {
@@ -42,16 +52,16 @@ bot.on("message", (msg)=>{
 
     if (curentMessage == "Мин")
     {
-        bot.sendMessage (CHAT_ID, "Минимум за сегодня = " + lowestPrice);
+        bot.sendMessage (CHAT_ID, "Минимум за сегодня " + MoneyMarket + " = " + lowestPrice);
     }
 
     if (curentMessage == "Макс")
     {
-        bot.sendMessage (CHAT_ID, "Максимум за сегодня = " + higestPrice);
+        bot.sendMessage (CHAT_ID, "Максимум за сегодня " + MoneyMarket + " = "  + higestPrice);
     }
     
     if (curentMessage == "Курс"){
-        bot.sendMessage (CHAT_ID, "Текущий курс = " + actualPrice);
+        bot.sendMessage (CHAT_ID, "Текущий курс " + MoneyMarket + " = "  + actualPrice);
     }
     console.log(msg);
 
@@ -103,13 +113,13 @@ setInterval(function()
             if (actualPrice>higestPrice)
             {
                 higestPrice = actualPrice;
-                bot.sendMessage (CHAT_ID, "Максимум за сегодня = " + higestPrice);
+                bot.sendMessage (CHAT_ID, "Максимум за сегодня " + MoneyMarket + " = "  + higestPrice);
             };
 
             if (actualPrice<lowestPrice)
             {
                 lowestPrice = actualPrice;
-                bot.sendMessage (CHAT_ID, "Минимум за сегодня = " + lowestPrice);
+                bot.sendMessage (CHAT_ID, "Минимум за сегодня " + MoneyMarket + " = "  + lowestPrice);
             };
 
             if (changeCourse>=1.001)
