@@ -124,13 +124,13 @@ setInterval(function()
 
             if (changeCourse>=1.001)
             {
-                bot.sendMessage (CHAT_ID, "Курс падает c = " + previousPrice + " до = " + actualPrice);
+                bot.sendMessage (CHAT_ID, "Курс растет c = " + previousPrice + " до = " + actualPrice);
                 console.log ("Upper");
             };
 
             if (changeCourse<=0.999)
             {
-                bot.sendMessage (CHAT_ID, "Курс растет c = " + previousPrice + " до = " + actualPrice);
+                bot.sendMessage (CHAT_ID, "Курс падает c = " + previousPrice + " до = " + actualPrice);
                 console.log ("Lowwer");
             };  
             
