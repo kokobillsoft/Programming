@@ -25,7 +25,9 @@ async function fetchAsyncTodos(){
         console.log("data:", data)
     } catch (e) {
         console.error(e)
-    }
+    } finally{
+
+    } 
 
     
 }
