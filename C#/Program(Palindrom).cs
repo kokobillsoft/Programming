@@ -21,11 +21,15 @@ namespace Palindrom
 
                 for (int i = 0; i < (wordFromConsoleCharArray.Length / 2); i++)
                 {
-                    if (wordFromConsoleCharArray[i] != wordFromConsoleCharArray[wordFromConsoleCharArray.Length - 1 - i])
+                    if (Char.IsLetter(wordFromConsoleCharArray[i])
                     {
+                        if (wordFromConsoleCharArray[i] != wordFromConsoleCharArray[wordFromConsoleCharArray.Length - 1 - i]))
+                        {
                         equalMark = false;
                         break;
+                        }
                     }
+                    
                 }
 
                 if (equalMark && (wordFromConsole != null))
