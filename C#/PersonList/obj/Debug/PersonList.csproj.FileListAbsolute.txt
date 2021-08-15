@@ -1,0 +1,6 @@
+/Users/MAC-kokobill/Projects/PersonList/PersonList/bin/Debug/PersonList.exe
+/Users/MAC-kokobill/Projects/PersonList/PersonList/bin/Debug/PersonList.pdb
+/Users/MAC-kokobill/Projects/PersonList/PersonList/obj/Debug/PersonList.csproj.CoreCompileInputs.cache
+/Users/MAC-kokobill/Projects/PersonList/PersonList/obj/Debug/PersonList.exe
+/Users/MAC-kokobill/Projects/PersonList/PersonList/obj/Debug/PersonList.pdb
+/Users/MAC-kokobill/Projects/PersonList/PersonList/obj/Debug/PersonList.csproj.AssemblyReference.cache
