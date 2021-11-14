@@ -1,4 +1,5 @@
 ﻿using System;
+using ConsoleAppPalindromAndPersonesList.MicroProgramm.Check.Number;
 namespace ConsoleAppPalindromAndPersonesList.Input
 {
     public class Age
@@ -6,7 +7,8 @@ namespace ConsoleAppPalindromAndPersonesList.Input
         public static int FromConsole()
         {
             int wrongAnswerCount = 0;
-            int ageFromConsole, numberFromConsole;
+            int numberFromConsole;
+            int answerToReturn = -1;
 
             
             while (wrongAnswerCount < 5)
@@ -15,16 +17,18 @@ namespace ConsoleAppPalindromAndPersonesList.Input
                 numberFromConsole = Input.Number.IntFromConsole();
                 if (numberFromConsole == -2147483648)
                 {
-                    return -1;
+                    answerToReturn = -1;
+                    break;
                 }
-                if (MicroProgramm.Check.Number.AgeOfWorkPeople.Check(numberFromConsole) != -1)
+                else if (AgeOfWorkPeople.Check(numberFromConsole) != -1)
                 {
-                    return numberFromConsole;
+                    answerToReturn = numberFromConsole;
+                    break;
                 }
                 Console.WriteLine("-----Input ERROR!-----");
                 wrongAnswerCount++;
             }
-                return -1;
+                return answerToReturn;
         }
     }
 }

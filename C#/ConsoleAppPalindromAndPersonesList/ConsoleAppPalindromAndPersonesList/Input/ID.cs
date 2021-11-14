@@ -5,7 +5,7 @@ namespace ConsoleAppPalindromAndPersonesList.Input
     {
         public static int FromConsole()
         {
-            int idFromConsole;
+            int idFromConsole = -1;
             int wrongAnswerCount = 0;
 
             while (wrongAnswerCount < 5)
@@ -14,12 +14,12 @@ namespace ConsoleAppPalindromAndPersonesList.Input
                 idFromConsole = Input.Number.IntFromConsole();
                 if (idFromConsole > 0)
                 {
-                    return idFromConsole;
+                    break;
                 }
                 Console.WriteLine("-----Input ERROR!-----");
                 wrongAnswerCount++;
             }
-            return -1;
+            return idFromConsole;
         }
     }
 }

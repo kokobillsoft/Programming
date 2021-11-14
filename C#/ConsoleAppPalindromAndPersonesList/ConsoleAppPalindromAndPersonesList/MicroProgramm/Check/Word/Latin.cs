@@ -7,11 +7,12 @@ namespace ConsoleAppPalindromAndPersonesList.MicroProgramm.Check.Word
     {
         public static bool TrueORFalse(string checkWord)
         {
+            bool answerToReturn = false;
             if (!String.IsNullOrEmpty(checkWord) && Regex.IsMatch(checkWord, @"^[a-zA-Z]+$"))
             {
-                return true;
+                answerToReturn = true;
             }
-            return false;
+            return answerToReturn;
         }
     }
 }

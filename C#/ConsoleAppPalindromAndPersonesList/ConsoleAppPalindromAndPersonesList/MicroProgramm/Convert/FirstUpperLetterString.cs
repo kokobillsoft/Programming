@@ -8,6 +8,7 @@ namespace ConsoleAppPalindromAndPersonesList.MicroProgramm.Convert
             string convertingString = null;
             char[] convertingStringCharArray;
             bool firstLetterIsLower = true;
+
             if (!String.IsNullOrEmpty(stringWithoutConverting))
             {
                 convertingStringCharArray = stringWithoutConverting.ToCharArray();
@@ -27,9 +28,8 @@ namespace ConsoleAppPalindromAndPersonesList.MicroProgramm.Convert
                     }
                 }             
                 convertingString = new string(convertingStringCharArray);
-                return convertingString;
             }
-                return null;
+                return convertingString;
         }
     }
 }

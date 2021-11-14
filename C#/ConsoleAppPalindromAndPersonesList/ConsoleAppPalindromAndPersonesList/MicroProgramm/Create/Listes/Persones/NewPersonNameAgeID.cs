@@ -9,14 +9,25 @@ namespace ConsoleAppPalindromAndPersonesList.MicroProgramm.Create.Listes.Persone
 
             newPerson.IndexOfPerson = Input.ID.FromConsole();
             if (newPerson.IndexOfPerson == -1)
-                return null;
-            newPerson.NameOfPerson = Input.Name.FromConsole();
-            if (newPerson.NameOfPerson == null)
-                return null;
-            newPerson.AgeOfPerson = Input.Age.FromConsole();
-            if (newPerson.AgeOfPerson == -1)
-                return null;
-
+            {
+                newPerson = null;
+            }
+            else
+            {
+                newPerson.NameOfPerson = Input.Name.FromConsole();
+                if (newPerson.NameOfPerson == null)
+                {
+                    newPerson = null;
+                }
+                else
+                {
+                    newPerson.AgeOfPerson = Input.Age.FromConsole();
+                    if (newPerson.AgeOfPerson == -1)
+                    {
+                        newPerson = null;
+                    }
+                }
+            }
             return newPerson;
         }
     }

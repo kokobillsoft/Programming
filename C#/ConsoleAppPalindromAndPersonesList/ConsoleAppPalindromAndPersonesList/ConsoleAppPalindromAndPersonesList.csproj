@@ -32,7 +32,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HeadLevel\ConsoleChangeOperation.cs" />
     <Compile Include="MicroProgramm\Check\Palindrome\AnswerTo.cs" />
     <Compile Include="MicroProgramm\Check\Palindrome\CheckWord.cs" />
     <Compile Include="MicroProgramm\Check\Palindrome\PalindromArray.cs" />
@@ -54,7 +53,6 @@
     <Compile Include="Output\OutputListPersonesNameAgeID.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="HeadLevel\" />
     <Folder Include="Input\" />
     <Folder Include="MicroProgramm\" />
     <Folder Include="MicroProgramm\Check\" />

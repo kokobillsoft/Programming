@@ -5,12 +5,15 @@ namespace ConsoleAppPalindromAndPersonesList.MicroProgramm.Check.Number
     {
         public static int Check(int inputAge)
         {
-            if (MicroProgramm.Check.Number.AgeOfPeople.Check(inputAge) != -1)
+            int answerForReturn = -1;
+            if (AgeOfPeople.Check(inputAge) != -1)
             {
                 if (inputAge >= 18)
-                    return inputAge;
+                {
+                    answerForReturn = inputAge;
+                }     
             }
-            return -1;
+            return answerForReturn;
         }
     }
 }

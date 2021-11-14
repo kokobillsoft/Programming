@@ -1,4 +1,6 @@
 ﻿using System;
+using ConsoleAppPalindromAndPersonesList.MicroProgramm.Check.Word;
+
 namespace ConsoleAppPalindromAndPersonesList.Input
 {
     public class Name
@@ -6,19 +8,21 @@ namespace ConsoleAppPalindromAndPersonesList.Input
         public static string FromConsole()
         {
             int wrongAnswerCount = 0;
-            string nameFromConsole,formatingName;
+            string nameFromConsole;
+            string formatingName = null;
+
             Console.WriteLine("*****Enter Name*****");
             while (wrongAnswerCount < 5)
             {
                 nameFromConsole = Input.Word.LatinFromConsole();
                 if (nameFromConsole == null)
                 {
-                    return null;
+                    break;
                 }
-                formatingName = MicroProgramm.Check.Word.LatinName.CheckAndConwerting(nameFromConsole);
+                formatingName = LatinName.CheckAndConwerting(nameFromConsole);
                 if (formatingName != null)
                 {
-                    return(formatingName);
+                    break;
                 }
                 else
                 {
@@ -26,7 +30,7 @@ namespace ConsoleAppPalindromAndPersonesList.Input
                     Console.WriteLine("-----Name must have 2 or more letters-----");
                 }
             }
-            return null;
+            return formatingName;
         }
     }
 }

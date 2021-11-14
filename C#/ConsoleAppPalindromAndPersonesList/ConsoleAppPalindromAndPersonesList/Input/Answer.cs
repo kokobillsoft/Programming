@@ -7,17 +7,20 @@ namespace ConsoleAppPalindromAndPersonesList.Input
         {
             int wrongAnswerCount = 0;
             string answerYN;
+            bool answerToReturn = false;
             while (wrongAnswerCount < 5)
             {
                 Console.WriteLine("*****Enter Y=\"Yes\" or N=\"No\"*****");
                 answerYN = Console.ReadLine();
                 if (answerYN == "N")
                 {
-                    return false;
+                    answerToReturn = false;
+                    break;
                 }
                 else if (answerYN == "Y")
                 {
-                    return true;
+                    answerToReturn = true;
+                    break;
                 }
                 else
                 {
@@ -25,8 +28,7 @@ namespace ConsoleAppPalindromAndPersonesList.Input
                     wrongAnswerCount++;
                 }
             }
-            Console.ReadLine();
-            return false;
+            return answerToReturn;
         }
     }
 }

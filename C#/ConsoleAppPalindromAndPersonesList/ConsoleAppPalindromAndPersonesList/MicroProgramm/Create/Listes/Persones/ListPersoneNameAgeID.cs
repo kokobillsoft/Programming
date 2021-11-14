@@ -24,8 +24,10 @@ namespace ConsoleAppPalindromAndPersonesList.MicroProgramm.Create.Listes.Persone
                 }
                 Console.WriteLine("*****Do You want create new person?  Y/N*****");
             }
-            if (newPersonesList.Count==0)
-                return null;
+            if (newPersonesList.Count == 0)
+            {
+                newPersonesList = null;
+            }    
             return newPersonesList;
         }
     }
