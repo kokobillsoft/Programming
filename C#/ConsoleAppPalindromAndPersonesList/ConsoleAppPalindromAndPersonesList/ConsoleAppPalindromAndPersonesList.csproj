@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">anycpu</Platform>
+    <ProjectGuid>{5E5EE0C4-8DA9-4C6E-B480-EC6EB02CD02A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleAppPalindromAndPersonesList</RootNamespace>
+    <AssemblyName>ConsoleAppPalindromAndPersonesList</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|anycpu' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|anycpu' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MicroProgramm\Check\Palindrome\AnswerTo.cs" />
+    <Compile Include="MicroProgramm\Check\Palindrome\CheckWord.cs" />
+    <Compile Include="MicroProgramm\Check\Palindrome\PalindromArray.cs" />
+    <Compile Include="Input\Answer.cs" />
+    <Compile Include="Input\Name.cs" />
+    <Compile Include="Input\Word.cs" />
+    <Compile Include="MicroProgramm\Check\Word\Latin.cs" />
+    <Compile Include="MicroProgramm\Check\Word\LatinName.cs" />
+    <Compile Include="MicroProgramm\Convert\FirstUpperLetterString.cs" />
+    <Compile Include="MicroProgramm\Create\Listes\Persones\PersoneNameAgeID.cs" />
+    <Compile Include="MicroProgramm\Create\Listes\Persones\ListPersoneNameAgeID.cs" />
+    <Compile Include="Input\Age.cs" />
+    <Compile Include="MicroProgramm\Check\Number\AgeOfPeople.cs" />
+    <Compile Include="MicroProgramm\Check\Number\AgeOfWorkPeople.cs" />
+    <Compile Include="Input\Number.cs" />
+    <Compile Include="MicroProgramm\Check\Number\IntegerYOrN.cs" />
+    <Compile Include="Input\ID.cs" />
+    <Compile Include="MicroProgramm\Create\Listes\Persones\NewPersonNameAgeID.cs" />
+    <Compile Include="Output\OutputListPersonesNameAgeID.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Input\" />
+    <Folder Include="MicroProgramm\" />
+    <Folder Include="MicroProgramm\Check\" />
+    <Folder Include="MicroProgramm\Check\Palindrome\" />
+    <Folder Include="MicroProgramm\Check\Word\" />
+    <Folder Include="MicroProgramm\Convert\" />
+    <Folder Include="MicroProgramm\Create\" />
+    <Folder Include="MicroProgramm\Create\Listes\" />
+    <Folder Include="MicroProgramm\Create\Listes\Persones\" />
+    <Folder Include="MicroProgramm\Check\Number\" />
+    <Folder Include="Output\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
